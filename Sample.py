@@ -46,6 +46,7 @@ def show_stats():
         return
     
     print("\nSeason Summary")
+    
     print(f"Total Matches: {len(df)}")
     print(f"Wins: {sum(df['result']=='Win')}")
     print(f"Draws: {sum(df['result']=='Draw')}")
@@ -72,6 +73,7 @@ def plot_graphs():
 
 while True:
     print("\n=== Team Match Analyzer ===")
+    
     print("1. Add Match")
     print("2. Show Season Stats")
     print("3. Show Graphs")
@@ -85,7 +87,7 @@ while True:
     elif choice == "3":
         plot_graphs()
     elif choice == "4":
-        print("Goodbye!")
+        print("Thank you")
         break
     else:
         print("Invalid choice, try again.")
