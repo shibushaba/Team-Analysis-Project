@@ -67,14 +67,11 @@ def plot_graphs():
     plt.show()
     
     
-    df[["goals_for","goals_against"]].plot(kind="line", marker="o", title="Team Performance Over Matches")
-    plt.xlabel("Match Index")
-    plt.ylabel("Goals")
-    plt.show()
+   
 
 
 while True:
-    print("\n=== Team Match Analyzer ⚽ ===")
+    print("\n=== Team Match Analyzer ===")
     print("1. Add Match")
     print("2. Show Season Stats")
     print("3. Show Graphs")
@@ -88,7 +85,7 @@ while True:
     elif choice == "3":
         plot_graphs()
     elif choice == "4":
-        print("Goodbye! 👋")
+        print("Goodbye!")
         break
     else:
         print("Invalid choice, try again.")
