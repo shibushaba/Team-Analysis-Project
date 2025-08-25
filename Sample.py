@@ -8,16 +8,13 @@ FILE = "team_matches.csv"
 if not os.path.exists(FILE):
     df = pd.DataFrame(columns=["date","opponent","goals_for","goals_against","result"])
     df.to_csv(FILE, index=False)
-
-
+    
 def load_data():
     return pd.read_csv(FILE)
 
-
 def save_data(df):
     df.to_csv(FILE, index=False)
-
-
+    
 def add_match():
     opponent = input("Opponent Team: ")
     gf = int(input("Goals For: "))
@@ -37,8 +34,7 @@ def add_match():
     df = pd.concat([df, new], ignore_index=True)
     save_data(df)
     print("Match added successfully!")
-
-
+    
 def show_stats():
     df = load_data()
     if df.empty:
@@ -54,8 +50,7 @@ def show_stats():
     print(f"Goals Scored: {df['goals_for'].sum()}")
     print(f"Goals Conceded: {df['goals_against'].sum()}")
     print(f"Win %: {round((sum(df['result']=='Win')/len(df))*100, 2)}%")
-
-
+    
 def plot_graphs():
     df = load_data()
     if df.empty:
@@ -67,10 +62,6 @@ def plot_graphs():
     plt.ylabel("")
     plt.show()
     
-    
-   
-
-
 while True:
     print("\n=== Team Match Analyzer ===")
     
